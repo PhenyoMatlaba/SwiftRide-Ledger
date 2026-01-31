@@ -57,5 +57,28 @@ Later phases migrate to APIs and databases without changing ledger rules.
 
 ## Relationship to CodeBank
 
+# SwiftRide Ledger Schema
+
+Each row in the ledger represents ONE transaction.
+
+## Required Fields
+
+| Field Name | Description |
+|----------|-------------|
+| Transaction_ID | Unique system-generated ID |
+| Timestamp | Time transaction entered system |
+| User_WhatsApp | WhatsApp number initiating transaction |
+| Transaction_Type | TOP_UP, DEBIT, RIDE_PAYMENT |
+| Amount_ZAR | Monetary value |
+| Reference | External or internal reference |
+| Channel | WhatsApp |
+| Status | PENDING, APPROVED, COMPLETED, FAILED |
+| Source | Google Form / WhatsApp |
+| Notes | Optional system or operator notes |
+
+No calculated balances are stored.
+Balances are derived from transaction history.
+
+
 SwiftRide Ledger is a vertical implementation of CodeBank Core Ledger Logic.
 All rules defined here must remain compatible with CodeBank governance standards.
